@@ -1155,6 +1155,7 @@ header .mega-menu .links li a i {
 
 .video .container {
   display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 991px) {
