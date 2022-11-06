@@ -1,27 +1,27 @@
 //Count input Characters
 
-let inputChar = document.querySelector(".discounts .form textarea.input");
+let textarea = document.querySelector(".discounts .form textarea");
 let inputSpan = document.querySelector(".discounts .form .textarea span");
 let textProgress = document.querySelector(
   ".discounts .form .textarea .text-progress"
 );
-inputChar.oninput = () => {
-  let inputLength = inputChar.value.length;
+textarea.oninput = () => {
+  let inputLength = textarea.value.length;
   inputCount(inputLength);
 };
 
 function inputCount(e) {
-  inputSpan.innerHTML = inputChar.getAttribute("maxlength") - e;
+  inputSpan.innerHTML = 200 - e;
   textProgress.style.width = `${
-    (e / inputChar.getAttribute("maxlength")) * 100
+    (e / textarea.getAttribute("maxlength")) * 100
   }%`;
-  if (inputSpan.innerHTML == 0) {
+  if (inputSpan.innerHTML === 0) {
     inputSpan.style.color = "red";
-    inputChar.style.color = "red";
+    textarea.style.color = "red";
     textProgress.style.background = "red";
   } else {
     inputSpan.style.color = "var(--main-color)";
-    inputChar.style.color = "black";
+    textarea.style.color = "black";
     textProgress.style.background = "var(--main-color)";
   }
 }
