@@ -3,8 +3,8 @@ let scrollToTopBtn = document.querySelector(".scrollToTop");
 
 window.onscroll = () => {
   window.scrollY >= 500
-    ? (scrollToTopBtn.style.opacity = 1)
-    : (scrollToTopBtn.style.opacity = 0);
+    ? (scrollToTopBtn.style.display = 'block')
+    : (scrollToTopBtn.style.display = 'none');
 };
 
 scrollToTopBtn.onclick = () => {

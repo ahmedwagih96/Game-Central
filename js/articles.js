@@ -20,12 +20,14 @@ function setArticles(articles) {
     let div = document.createElement("div");
     div.className = "box";
     div.innerHTML = `
-    <img src=${thumbnail} alt="thumbnail" />
-    <div class="content">
-      <h3>${title}</h3>
-      <p>
-        ${short_description}
-      </p>
+    <div>
+      <img src=${thumbnail} alt="thumbnail" />
+      <div class="content">
+        <h3>${title}</h3>
+        <p>
+          ${short_description}
+        </p>
+      </div>
     </div>
     <div class="info">
       <a href="">Read More</a>

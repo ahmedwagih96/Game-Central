@@ -3,7 +3,8 @@ let unitDays = document.querySelector(".days");
 let unitHours = document.querySelector(".hours");
 let unitMinutes = document.querySelector(".minutes");
 let unitSeconds = document.querySelector(".seconds");
-let countDownDate = new Date("Dec 31, 2022 23:59:59").getTime();
+let currentYear = new Date().getFullYear();
+let countDownDate = new Date(`Dec 31, ${currentYear} 23:59:59`).getTime();
 
 window.onload = () => {
   let dateNow = new Date().getTime();

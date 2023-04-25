@@ -63,6 +63,11 @@ ul {
   text-transform: uppercase;
   letter-spacing: 5px;
 }
+@media (max-width: 767px) {
+  .main-title {
+    font-size: 14px
+  }
+}
 .main-title::before,
 .main-title::after {
   content: "";
@@ -133,7 +138,6 @@ ul {
 .scrollToTop {
   background-color: var(--main-color);
   color: white;
-  opacity: 0;
   padding: 5px 10px;
   font-size: 18px;
   position: fixed;
@@ -141,6 +145,7 @@ ul {
   right: 20px;
   z-index: 100;
   transition: 1s;
+  display: none;
   cursor: pointer;
 }
 
@@ -437,10 +442,12 @@ header .mega-menu .links li a i {
 
 .articles .container .box {
   box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
-  background-color: white;
   border-radius: 6px;
   overflow: hidden;
   transition: var(--main-transition-duration);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .articles .container .box:hover {
@@ -691,164 +698,12 @@ header .mega-menu .links li a i {
 }
 /* End Features */
 
-/* Start Testimonials */
-.testimonials {
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
-  position: relative;
-  background-color: var(--main-background-color);
-}
-
-.testimonials .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 40px;
-}
-
-.testimonials .box {
-  background-color: white;
-  position: relative;
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: rgb(0 0 0 / 7%);
-}
-
-.testimonials .box img {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  right: 0;
-  top: 0;
-  transform: translateY(-20%);
-  border-radius: 50%;
-  border: 10px solid var(--main-background-color);
-}
-
-.testimonials .box h3 {
-  margin: 0 0 10px;
-  color: var(--main-color);
-}
-.testimonials .box .title {
-  color: #777;
-  margin-bottom: 10px;
-  display: block;
-}
-.testimonials .box p {
-  color: #777;
-  line-height: 1.5;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.testimonials .box .rate .fas {
-  color: #ffc107;
-}
-/* End Testimonials */
-
-/* Start Works */
-.works {
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
-  position: relative;
-  background-color: var(--main-background-color);
-}
-
-.works .container {
-  display: flex;
-  gap: 10%;
-}
-
-@media (max-width: 991px) {
-  .works .container {
-    flex-direction: column;
-  }
-
-  .works .container > img {
-    margin-bottom: 100px;
-  }
-}
-
-.works .container > img {
-  width: 100%;
-  max-width: 100%;
-  max-height: 500px;
-  flex: 1;
-  margin: auto;
-}
-
-.works .container .content {
-  display: flex;
-  flex-direction: column;
-  gap: 10%;
-}
-
-@media (max-width: 991px) {
-  .works .container .content {
-    margin-top: 30px;
-  }
-}
-.works .container .box {
-  display: flex;
-  gap: 10%;
-  align-items: center;
-  border: 1px solid white;
-  padding: 20px;
-  background-color: #f5f5f5;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.works .container .box::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0;
-  height: 0;
-  background-color: var(--main-background-color);
-  transition: var(--main-transition-duration);
-  z-index: -1;
-}
-
-.works .container .box:hover::before {
-  width: 100%;
-  height: 100%;
-}
-
-@media (max-width: 991px) {
-  .works .container .box {
-    flex-direction: column;
-  }
-
-  .works .container .box img {
-    margin-bottom: 20px;
-  }
-}
-
-.works .container .box img {
-  width: 64px;
-}
-
-.works .container .box .info h3 {
-  margin: 0;
-  font-size: 22px;
-}
-
-.works .container .box .info p {
-  margin-top: 10px 0 0;
-  color: #777;
-  line-height: 1.5;
-  font-size: 18px;
-}
-/* Ends Works */
-
 /* Start News */
 .news {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
   position: relative;
-  background-color: white;
+  background-color: var(--main-background-color)
 }
 
 @media (max-width: 991px) {
@@ -1176,6 +1031,11 @@ header .mega-menu .links li a i {
   padding: 15px;
   background-color: #f4f4f4;
 }
+
+.video .container .box h3 i{
+  cursor: pointer;
+}
+
 .video .container .box h3 i:hover {
   color: var(--main-color);
 }
@@ -1222,6 +1082,7 @@ header .mega-menu .links li a i {
   font-weight: bold;
   font-size: 25px;
   color: white;
+  cursor: pointer;
 }
 .video .container .box-video i:hover {
   color: var(--main-color);
@@ -1235,6 +1096,7 @@ header .mega-menu .links li a i {
 }
 
 .video .container .box-video img {
+  width: 100%;
   max-width: 100%;
   padding: 10px;
   display: none;
