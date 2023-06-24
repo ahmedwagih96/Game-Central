@@ -5,7 +5,10 @@ let unitMinutes = document.querySelector(".minutes");
 let unitSeconds = document.querySelector(".seconds");
 let currentYear = new Date().getFullYear();
 let countDownDate = new Date(`Dec 31, ${currentYear} 23:59:59`).getTime();
+let eventYear = document.querySelector("#eventYear");
 
+eventYear.textContent = currentYear;
+console.log(eventYear);
 window.onload = () => {
   let dateNow = new Date().getTime();
   let dateDiff = countDownDate - dateNow;
